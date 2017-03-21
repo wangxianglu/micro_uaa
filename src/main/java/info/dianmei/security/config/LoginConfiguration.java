@@ -1,4 +1,4 @@
-package info.dianmei.info.dianmei.security.config;
+package info.dianmei.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
