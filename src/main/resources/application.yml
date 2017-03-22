@@ -1,5 +1,5 @@
 server:
-  context-path:
+  context-path: /uaa
   port: 8554
 #JACKSON
 spring:
@@ -9,13 +9,15 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/jwt_example
-    initialize: true
+    initialize: false
     username: root
     password: 
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+  application:
+    name: uaa-server
 logging:
   level:
     org.springframework:
@@ -28,3 +30,13 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+
+eureka:
+  instance:
+    hostname: uaa-server
+  client:
+    serviceUrl:
+      defaultZone: http://10.97.0.106:8761/eureka/
+security:
+  basic:
+    enabled: false

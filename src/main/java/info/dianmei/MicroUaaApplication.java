@@ -12,9 +12,9 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class MicroUaaApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(MicroUaaApplication.class, args);
-	}
-}
+	}}

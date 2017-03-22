@@ -1,4 +1,4 @@
-package info.dianmei.repository;
+package info.dianmei.security.repository;
 
 import info.dianmei.model.security.User;
 import org.springframework.data.jpa.repository.JpaRepository;
