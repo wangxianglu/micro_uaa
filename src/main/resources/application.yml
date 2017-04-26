@@ -3,6 +3,8 @@ server:
   port: 8554
 #JACKSON
 spring:
+  application:
+      name: uaa-server
   jackson:
     serialization:
       INDENT_OUTPUT: true
@@ -16,8 +18,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  application:
-    name: uaa-server
 logging:
   level:
     org.springframework:
@@ -34,9 +34,10 @@ jwt:
 eureka:
   instance:
     hostname: uaa-server
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
   client:
     serviceUrl:
       defaultZone: http://10.97.0.106:8761/eureka/
-security:
-  basic:
-    enabled: false
+    healthcheck:
+      enabled: true
